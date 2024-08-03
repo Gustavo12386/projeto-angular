@@ -1,0 +1,23 @@
+<div class="grid justify-content-center card">
+   <div class="col-4 sm-6 md4">
+     <p-card>
+       <div class="grid">
+         <div class="col-12 text-center">
+            <fa-icon [icon]="faCar" class="icon-blue fa-4x"></fa-icon>
+          <h2>Car Sales</h2>
+         </div>
+         <div class="col-12">
+         <label for="">Usuário:</label>
+         <input [(ngModel)]="requestLogin.login" class="col-12" type="text" pInputText />
+         </div>
+         <div class="col-12">
+         <label for="">Senha:</label>
+         <input [(ngModel)]="requestLogin.password"  class="col-12" type="password" pInputText/>
+         </div>
+         <div class="col-12">
+            <button (click)="doLogin()" pButton type="button" label="entrar" class="col-12"></button>
+         </div>
+       </div>
+     </p-card>
+   </div>
+</div>

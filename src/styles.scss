@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import 'primeflex/primeflex.scss';
+
+
+$background-color: #252525 !important;
+$font-color: #fff !important;
+
+
+.p-card{
+    background-color: $background-color;
+    color: $font-color
+}
+
+.div-principal{
+   width: 20vmax;
+}
+
+.text-center{
+  text-align: center;  
+}
+
+.icon-blue{
+  color: blue;  
+}
+
+body{
+  background-image: url(./assets/6769724-amazing-car-backgrounds.jpg);  
+  background-repeat: no-repeat;  
+  background-attachment: fixed;
+  background-size: cover;  
+  opacity: 0.95;  
+}
