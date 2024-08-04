@@ -7,6 +7,8 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { RequestLogin } from '../../resources/models/RequestLogin';
 import { FormsModule } from '@angular/forms'; 
 import {LoginService} from '../../resources/services/login.service'
+import { AlertService } from '../../resources/services/alert.service';
+import { Router } from '@angular/router';
 
 library.add(faCar);
 
@@ -22,7 +24,7 @@ export class LoginComponent implements OnInit {
 
   public requestLogin: RequestLogin;
 
-  constructor (private loginService: LoginService) {
+  constructor (private loginService: LoginService, private alertService: AlertService, private router: Router) {
     this.requestLogin = new RequestLogin();
   }
 
@@ -30,10 +32,10 @@ export class LoginComponent implements OnInit {
 
   public doLogin() :void{
     this.loginService.doLogin(this.requestLogin).subscribe(data => {
-      console.log(data);
+      this.router.navigate(['dashboard']);
     },
-    error => {
-      console.error(error);
+    httpError => {
+      this.alertService.error(httpError.error.message);      
     } );
   }
 }
